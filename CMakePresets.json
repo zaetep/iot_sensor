@@ -1,0 +1,11 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "arm-gcc",
+      "generator": "Ninja",
+      "toolchainFile": "stm32_cortex-m33_toolchain.cmake",
+      "binaryDir": "build"
+    }
+  ]
+}

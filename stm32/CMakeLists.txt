@@ -32,7 +32,8 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS TRUE)
 enable_language(C ASM)
 
 # Create an executable object type
-add_executable(${CMAKE_PROJECT_NAME})
+# This already exists in root directory, not needed here.
+# add_executable(${CMAKE_PROJECT_NAME})
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)

@@ -7,6 +7,7 @@ set(CMAKE_C_EXTENSIONS ON)
 
 # Set project name
 set(CMAKE_PROJECT_NAME iot_sensor)
+project(${CMAKE_PROJECT_NAME})
 
 # Allow policy for external linking of libraries
 cmake_policy(SET CMP0079 NEW)
@@ -16,6 +17,13 @@ add_executable(${CMAKE_PROJECT_NAME})
 
 # Specify desired file name
 set_target_properties(${CMAKE_PROJECT_NAME} PROPERTIES OUTPUT_NAME "iot_sensor.elf")
+
+# Add include directories
+target_include_directories(
+    ${CMAKE_PROJECT_NAME} PUBLIC
+    src/inc
+    freertos-kernel/include
+    )
 
 # Add STM32 HAL
 add_subdirectory(stm32)
@@ -28,21 +36,24 @@ set(FREERTOS_HEAP 4)
 add_library(freertos_config INTERFACE)
 
 # Point to the directory where FreeRTOSConfig.h is located
-target_include_directories(freertos_config SYSTEM INTERFACE
+target_include_directories(
+    freertos_config SYSTEM INTERFACE
     ${CMAKE_CURRENT_SOURCE_DIR}/src/config
 )
 
-target_compile_definitions(freertos_config
-      INTERFACE
-      projCOVERAGE_TEST=0)
+target_compile_definitions(
+    freertos_config
+    INTERFACE
+    projCOVERAGE_TEST=0)
 
 # Add FreeRTOS Kernel
-add_subdirectory(freertos)
+add_subdirectory(freertos-kernel)
 
 # Add source directory
 add_subdirectory(src)
 
-target_link_libraries(${PROJECT_NAME}
+target_link_libraries(
+    ${PROJECT_NAME}
     freertos_kernel
     freertos_config
 )
