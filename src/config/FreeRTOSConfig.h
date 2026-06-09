@@ -34,7 +34,7 @@
 #define configUSE_16_BIT_TICKS                      0
 // Idle priority is not intended for any tasks, so no need to worry about this
 #define configIDLE_SHOULD_YIELD                     0
-#define configCHECK_FOR_STACK_OVERFLOW              ( 1 )
+#define configCHECK_FOR_STACK_OVERFLOW              ( 0 )
 #define configUSE_TIME_SLICING                      1
 #define configUSE_NEWLIB_REENTRANT                  0
 #define configENABLE_BACKWARD_COMPATIBILITY         0

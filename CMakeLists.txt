@@ -58,6 +58,7 @@ target_link_libraries(
     freertos_config
 )
 
+# Add linker script for STM32U545
 target_link_options(${CMAKE_PROJECT_NAME} PRIVATE
     "LINKER:--script=${CMAKE_CURRENT_SOURCE_DIR}/stm32/STM32U545xx_FLASH.ld"
 )
