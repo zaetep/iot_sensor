@@ -27,7 +27,7 @@
 #define configUSE_SB_COMPLETED_CALLBACK             0
 #define configUSE_TICK_HOOK                         0
 #define configCPU_CLOCK_HZ                          ( SystemCoreClock )
-#define configTICK_RATE_HZ                          ( SystemCoreClock )
+#define configTICK_RATE_HZ                          ( 1000 )
 #define configMAX_PRIORITIES                        ( 5 )
 #define configMINIMAL_STACK_SIZE                    ( 128 )
 #define configMAX_TASK_NAME_LEN                     ( 16 )
