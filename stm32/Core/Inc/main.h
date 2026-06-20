@@ -64,7 +64,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
-
+#define SHT3X_ADDR_A  0x44 // ADDR (pin 2) connected to logic low
+#define SHT3X_ADDR_B  0x45 // ADDR (pin 2) connected to logic high
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
