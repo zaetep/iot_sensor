@@ -1,7 +1,19 @@
+/**
+  ******************************************************************************
+  * @file           : application_main.c
+  * @brief          : Main FreeRTOS Application.
+  * @author         : Kaden Downes
+  ******************************************************************************
+  */
+
 #include "main.h"
 #include "alltasks.h"
 
-void appEntryPoint(void) {
+/** 
+  * @brief Entry point to FreeRTOS application.
+  */
+void appEntryPoint(void) 
+{
     // Initialize any tasks
     if (xTaskCreate(vBlinkLED, (const char *)"BlinkLED", configMINIMAL_STACK_SIZE, 
                     NULL, tskIDLE_PRIORITY + 1, NULL) != pdTRUE) {
