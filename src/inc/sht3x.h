@@ -11,4 +11,8 @@
 #define SHT3X_CLEAR_STATUS      0x3041
 #define STH3X_MEAS_HIGH_NO_CS   0x2400
 
+/* Export SHT3X Task for Initialization */
+
+void vSHT3XTask(void *pvParameters);
+
 #endif // SHT3X_H
